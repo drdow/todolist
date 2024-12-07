@@ -2,8 +2,19 @@ use std::io;
 use std::io::Write;
 
 fn main() {
+    let commands: [&str; 3] =  [
+        "add",
+        "list",
+        "exit"
+    ];
+
     println!("-- Welcome to To-Do app! --");
-    println!("Please, enter a command (add, list, exit):");
+    println!("Please, enter a command:");
+
+    for command in commands.iter() {
+        println!("  {}", command);
+    }
+    println!("Your command:");
     io::stdout().flush().unwrap();
 
     let mut command: String = String::new();
